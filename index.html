@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Зачем люди придумали рано вставать</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f2f2f2;
+		}
+		header {
+			background-color: #4b0092;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+		}
+		h1 {
+			margin-top: 0;
+		}
+		main {
+			max-width: 800px;
+			margin: 20px auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+			margin-bottom: 20px;
+		}
+		ul {
+			margin-left: 20px;
+			list-style: disc;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Зачем люди придумали рано вставать</h1>
+	</header>
+	<main>
+		<p><img src="https://matrasplus.ru/wa-data/public/shop/products/74/29/2974/images/219337/219337.750.jpg" alt="Кровать"></p>
+		<ul>
+			<li>Рано вставать помогает людям использовать утреннее время для выполнения задач и достижения целей.</li>
+            <p></p>
+			<li>Рано вставать способствует повышению продуктивности и эффективности в работе и обучении.</li>
+            <p></p>
+			<li>Рано вставать помогает установить режим дня и синхронизировать внутренние биологические часы с окружающей средой.</li>
+			<p></p>
+            <li>Рано вставать может быть связано с улучшением качества сна и уменьшением стресса.</li>
+			<p></p>
+            <li>Рано вставать может предоставлять возможность для физических упражнений, зарядки и занятий спортом.</li>
+		</ul>
+		<p><img src="https://versiya.info/uploads/posts/2018-03/1522067431_fotolia_57984381_subscription_monthly_m.jpg" alt="Человек, вставающий рано"></p>
+		<p>Хотя не все люди наслаждаются ранним подъемом, рано вставать может быть полезным для достижения личных и профессиональных целей, установления режима дня и улучшения здоровья и благополучия.</p>
+	</main>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Зачем вам будильник на телефоне? Вот удобный таймер на компбютере </title>
+  </head>
+  <body>
+    <h1>Зачем вам будильник на телефоне? Вот удобный таймер на компьютере</h1>
+    <h2>Таймер обратного отсчета до пробуждения</h2>
+    <p>Введите желаемое время пробуждения:</p>
+    <input type="time" id="alarmTime" name="alarmTime">
+    <button onclick="startTimer()">Запустить таймер</button>
+    <p id="countdown"></p>
+
+    <script>
+      function startTimer() {
+        var alarmTime = document.getElementById("alarmTime").value;
+        var now = new Date();
+        var alarm = new Date();
+        alarm.setHours(alarmTime.substr(0, 2));
+        alarm.setMinutes(alarmTime.substr(3, 2));
+        alarm.setSeconds(0);
+        if (alarm < now) {
+          alarm.setDate(alarm.getDate() + 1);
+        }
+        var countdown = setInterval(function() {
+          var diff = Math.round((alarm - new Date()) / 1000);
+          var hours = Math.floor(diff / (60 * 60));
+          var minutes = Math.floor((diff % (60 * 60)) / 60);
+          var seconds = diff % 60;
+          document.getElementById("countdown").innerHTML = "Осталось времени до пробуждения: " + hours + "ч " + minutes + "мин " + seconds + "сек";
+          if (diff <= 0) {
+            clearInterval(countdown);
+            document.getElementById("countdown").innerHTML = "Пора вставать!";
+          }
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
